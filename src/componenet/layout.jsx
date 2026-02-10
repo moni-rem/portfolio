@@ -40,6 +40,10 @@ export default function Layout() {
               <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/education">Education</Link></li>
               <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/skills">Skills</Link></li>
               <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/projects">Projects</Link></li>
+              <li>
+                <a href="https://github.com/moni-rem" className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" >
+                Github</a>
+              </li>
             </ul>
           </nav>
         </header>
