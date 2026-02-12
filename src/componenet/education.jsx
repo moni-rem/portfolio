@@ -5,12 +5,18 @@ export default function Education() {
     "bg-white/2 rounded-2xl shadow-lg p-8 border border-white/5 transition-all duration-300";
 
   const [edit, setEdit] = useState(false);
-  const [languages, setLanguages] = useState("Chinese, Khmer, English");
+
+  const [languages, setLanguages] = useState([
+    { language: "Khmer", level: "Pro" },
+    { language: "English", level: "Intermediate" },
+    { language: "Chinese", level: "Basic" },
+  ]);
 
   const [education, setEducation] = useState([
-    { year: "2024", text: "Graduated from High School" },
-    { year: "2025", text: "E-Commerce using Django" },
-    { year: "2025", text: "POS System using Django" },
+    {
+      text:
+        "I graduated from high school in 2025 and am currently pursuing a Bachelor’s degree at ACLEDA University while also studying for an Associate degree at TUX Global, majoring in Computer Science. I am highly motivated to build a strong foundation in software development, problem-solving, and modern technologies. Recently, I completed a two-month internship at ACLEDA University, where I gained practical experience working in a professional environment, improved my technical skills, and learned how to collaborate effectively within a team. This experience strengthened my passion for technology and reinforced my goal of becoming a skilled and reliable software developer.",
+    },
   ]);
 
   return (
@@ -20,7 +26,6 @@ export default function Education() {
           Education
         </h2>
 
-        {/* Optional edit button */}
         <button
           onClick={() => setEdit(!edit)}
           className="px-4 py-2 rounded-lg bg-pink-600/30 hover:bg-pink-600/50 transition"
@@ -29,35 +34,22 @@ export default function Education() {
         </button>
       </div>
 
-      <div className="space-y-3">
+      {/* ===== Education Text ===== */}
+      <div className="space-y-6">
         {education.map((item, i) => (
-          <div key={i} className="flex items-center gap-4">
+          <div key={i} className="flex items-start gap-4">
             {edit ? (
-              <>
-                <input
-                  value={item.year}
-                  onChange={(e) => {
-                    const copy = [...education];
-                    copy[i].year = e.target.value;
-                    setEducation(copy);
-                  }}
-                  className="rounded-lg px-3 py-2 border border-white/10 w-24 bg-black/40"
-                />
-                <input
-                  value={item.text}
-                  onChange={(e) => {
-                    const copy = [...education];
-                    copy[i].text = e.target.value;
-                    setEducation(copy);
-                  }}
-                  className="rounded-lg px-3 py-2 bg-black/40 border border-white/10 flex-1"
-                />
-              </>
+              <textarea
+                value={item.text}
+                onChange={(e) => {
+                  const copy = [...education];
+                  copy[i].text = e.target.value;
+                  setEducation(copy);
+                }}
+                className="rounded-lg px-3 py-2 bg-black/40 border border-white/10 flex-1 min-h-[140px]"
+              />
             ) : (
-              <>
-                <div className="font-bold text-lg text-white w-24">{item.year}</div>
-                <div className="text-lg text-gray-300">{item.text}</div>
-              </>
+              <p className="text-lg text-white leading-relaxed m-20 gap-y-8">{item.text}</p>
             )}
 
             {edit && (
@@ -75,7 +67,7 @@ export default function Education() {
 
       {edit && (
         <button
-          onClick={() => setEducation([...education, { year: "2026", text: "New Item" }])}
+          onClick={() => setEducation([...education, { text: "New Education Item" }])}
           className="mt-5 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg transition"
           type="button"
         >
@@ -83,33 +75,72 @@ export default function Education() {
         </button>
       )}
 
-      {/* Language chips */}
-      <div className="mt-8">
-        <h3 className="text-white font-semibold mb-3">Languages</h3>
+      {/* ===== Languages ===== */}
+      <div className="mt-10">
+        <h2 className="text-blue-300 font-bold text-3xl border-b border-white/10 pb-3">
+          Languages
+        </h2>
+
+        <div className="mt-6 space-y-4">
+          {languages.map((item, i) => (
+            <div key={i} className="flex items-center gap-3">
+              {edit ? (
+                <>
+                  <input
+                    value={item.language}
+                    onChange={(e) => {
+                      const copy = [...languages];
+                      copy[i].language = e.target.value;
+                      setLanguages(copy);
+                    }}
+                    placeholder="Language"
+                    className="rounded-lg px-3 py-2 border border-white/10 w-40 bg-black/40 text-white"
+                  />
+
+                  <input
+                    value={item.level}
+                    onChange={(e) => {
+                      const copy = [...languages];
+                      copy[i].level = e.target.value;
+                      setLanguages(copy);
+                    }}
+                    placeholder="Level (Pro, Intermediate...)"
+                    className="rounded-lg px-3 py-2 bg-black/40 border border-white/10 flex-1 text-white"
+                  />
+                </>
+              ) : (
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="px-3 py-1 rounded-full text-sm bg-blue-600/20 text-blue-200 border border-blue-500/30">
+                    {item.language}
+                  </span>
+                  <span className="text-gray-300 text-sm">{item.level}</span>
+                </div>
+              )}
+
+              {edit && (
+                <button
+                  onClick={() => setLanguages(languages.filter((_, idx) => idx !== i))}
+                  className="text-red-400 hover:text-red-300"
+                  type="button"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
 
         {edit && (
-          <input
-            value={languages}
-            onChange={(e) => setLanguages(e.target.value)}
-            className="w-full mb-4 rounded-lg px-3 py-2 bg-black/40 border border-white/10"
-            placeholder="Chinese, Khmer, English"
-          />
+          <button
+            onClick={() =>
+              setLanguages([...languages, { language: "New Language", level: "Level" }])
+            }
+            className="mt-5 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg transition"
+            type="button"
+          >
+            + Add Language
+          </button>
         )}
-
-        <div className="flex flex-wrap gap-2">
-          {languages
-            .split(",")
-            .map((l) => l.trim())
-            .filter(Boolean)
-            .map((l) => (
-              <span
-                key={l}
-                className="px-3 py-1 rounded-full text-sm bg-blue-600/20 text-blue-200 border border-blue-500/30"
-              >
-                {l}
-              </span>
-            ))}
-        </div>
       </div>
     </section>
   );
