@@ -25,7 +25,7 @@ const [skills, setSkills] = useState([
   { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
 ]);
 
-const [tools, setTools] = useState([
+const [tools] = useState([
   {
     name: "VS Code",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",

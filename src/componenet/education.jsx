@@ -51,7 +51,7 @@ export default function Education() {
             ) : (
             <p
 
-              className="relative text-2xl mt-10 text-bold sleading-relaxed font-normal
+              className="relative text-2xl mt-10 font-bold sleading-relaxed font-normal
               bg-[linear-gradient(120deg,rgba(255,255,255,0.20)_20%,rgba(96,165,250,0.90)_35%,rgba(255,255,255,0.20)_50%,rgba(96,165,250,0.90)_65%,rgba(255,255,255,0.20)_80%)]
               bg-[length:300%_100%] bg-clip-text text-transparent
               animate-waterFlow drop-shadow-[0_0_10px_rgba(96,165,250,0.25)]"

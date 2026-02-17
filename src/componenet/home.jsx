@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { FaLinkedin, FaFacebook, FaGithub } from "react-icons/fa";
 import profileImg from "../assert/profile.png"; // adjust path if needed
 
 export default function Home() {
@@ -112,6 +113,38 @@ export default function Home() {
                <p className="text-pink-400 text-lg font-semibold">
                 Software Developer
               </p>
+
+              {/* Social Links */}
+              <div className="mt-6 flex gap-4">
+            <a
+              href="https://www.linkedin.com/in/phearomthunmony-rem-288395349/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition"
+            >
+              <FaLinkedin size={22} />
+            </a>
+
+            <a
+              href="https://web.facebook.com/rem.phearomthun.mony"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-blue-500 hover:bg-blue-600 text-white transition"
+            >
+              <FaFacebook size={22} />
+            </a>
+
+            <a
+              href="https://github.com/moni-rem"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-gray-800 hover:bg-gray-900 text-white transition"
+            >
+              <FaGithub size={22} />
+            </a>
+          </div>
+
+
             </div>
 
             {/* About */}
