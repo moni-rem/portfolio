@@ -1,0 +1,48 @@
+.water-flow {
+  display: inline-flex;
+  white-space: nowrap;
+  gap: 3rem;
+
+  /* smoother + more visible flow */
+  animation: water-move 14s linear infinite;
+  will-change: transform;
+}
+
+.water-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: white;
+  opacity: 0.95;
+
+  /* wave + shimmer */
+  animation: water-wave 2.6s ease-in-out infinite;
+}
+
+/* horizontal current */
+@keyframes water-move {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* vertical wave motion */
+@keyframes water-wave {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(1px);
+  }
+  75% {
+    transform: translateY(-1px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

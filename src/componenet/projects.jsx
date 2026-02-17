@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import pos from "../assert/pos.png";
 import skincare from "../assert/skincare.jpg";
-
+import keychain from"../assert/key.jpg";
 export default function Projects() {
   const [edit, setEdit] = useState(false);
 
@@ -22,10 +22,10 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: "Another POS System",
-      desc: "Advanced POS with inventory & reporting.",
-      link: "https://github.com/Jumnert/JavaCafePos",
-      img: pos,
+      title: "KeychainHub Website",
+      desc: "create an website using ORM, React.js, Node.js and Python .",
+      link: "https://github.com/moni-rem/KeychainHub",
+      img: keychain,
     },
   ]);
 

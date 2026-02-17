@@ -44,6 +44,16 @@ export default function Layout() {
                 <a href="https://github.com/moni-rem" className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" >
                 Github</a>
               </li>
+               <a
+                href="/Moni_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 font-semibold"
+              >
+                CV
+              </a>
+
+
             </ul>
           </nav>
         </header>

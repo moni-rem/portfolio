@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 export default function Education() {
   const card =
-    "bg-white/2 rounded-2xl shadow-lg p-8 border border-white/5 transition-all duration-300";
+    "bg-white/1 rounded-2xl shadow-lg p-8 border border-white/5 transition-all duration-300";
 
   const [edit, setEdit] = useState(false);
 
   const [languages, setLanguages] = useState([
-    { language: "Khmer", level: "Pro" },
-    { language: "English", level: "Intermediate" },
-    { language: "Chinese", level: "Basic" },
+    { language: "Khmer", level: "Pro-Max" },
+    { language: "English", level: "Advance" },
+    { language: "Chinese", level: "master" },
   ]);
 
   const [education, setEducation] = useState([
@@ -49,7 +49,17 @@ export default function Education() {
                 className="rounded-lg px-3 py-2 bg-black/40 border border-white/10 flex-1 min-h-[140px]"
               />
             ) : (
-              <p className="text-lg text-white leading-relaxed m-20 gap-y-8">{item.text}</p>
+            <p
+
+              className="relative text-2xl mt-10 text-bold sleading-relaxed font-normal
+              bg-[linear-gradient(120deg,rgba(255,255,255,0.20)_20%,rgba(96,165,250,0.90)_35%,rgba(255,255,255,0.20)_50%,rgba(96,165,250,0.90)_65%,rgba(255,255,255,0.20)_80%)]
+              bg-[length:300%_100%] bg-clip-text text-transparent
+              animate-waterFlow drop-shadow-[0_0_10px_rgba(96,165,250,0.25)]"
+            >
+              {item.text}
+            </p>
+
+
             )}
 
             {edit && (
@@ -94,7 +104,7 @@ export default function Education() {
                       setLanguages(copy);
                     }}
                     placeholder="Language"
-                    className="rounded-lg px-3 py-2 border border-white/10 w-40 bg-black/40 text-white"
+                    className="rounded-lg px-3 py-2 border border-white/10 w-40 bg-black/40 text-white "
                   />
 
                   <input
@@ -109,11 +119,11 @@ export default function Education() {
                   />
                 </>
               ) : (
-                <div className="flex items-center gap-3 flex-wrap">
+                <div className="flex items-center gap-3 flex-wrap ml-20">
                   <span className="px-3 py-1 rounded-full text-sm bg-blue-600/20 text-blue-200 border border-blue-500/30">
                     {item.language}
                   </span>
-                  <span className="text-gray-300 text-sm">{item.level}</span>
+                  <span className="text-gray-300 text-sm ml-20">{item.level}</span>
                 </div>
               )}
 

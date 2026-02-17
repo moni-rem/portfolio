@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import profileImg from "../assert/profile.jpg"; // adjust path if needed
+import profileImg from "../assert/profile.png"; // adjust path if needed
 
 export default function Home() {
   const [edit, setEdit] = useState(false);
@@ -96,28 +96,33 @@ export default function Home() {
               >
                 {edit ? "Save" : "Edit"}
               </button>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+
             
             {/* Profile Pic */}
             <div className="flex flex-col items-center gap-4">
               <img
                 src={profileImg}
                 alt="Profile"
-                className="w-64 h-64 rounded-full object-cover border-2 border-blue-200 shadow-md"
+              className="w-64 h-68 object-cover border-2 border-black shadow-md rounded-xl"
               />
               <p className="text-pink-400 text-xl font-semibold">
-                A cat programmer
+                REM PHEAROMTHUNMONY
+              </p>
+               <p className="text-pink-400 text-lg font-semibold">
+                Software Developer
               </p>
             </div>
 
             {/* About */}
             <div>
-              <h2 className="text-blue-300 font-bold text-3xl mb-6">About Me</h2>
+              <h2 className="text-blue-300 font-bold text-3xl mb-6 ">About Me</h2>
 
               <div className="flex items-start gap-6 py-2">
                 
 
-                <div className="text-sm text-white flex-1">
+                <div className="text-sm text-white flex-1 max-w-xl">
+
                   {edit ? (
                     <input
                       defaultValue="My name is Mony, 20 years old. Currently major in Computer Science in TUX Global Institute."
@@ -125,7 +130,7 @@ export default function Home() {
                     />
                   ) : (
                     <span className="text-white text-lg gap-4">
-                         I am a motivated junior web developer with a strong foundation
+                      I am a motivated junior web developer with a strong foundation
                       in front-end and back-end development. I build responsive 
                       applications using HTML, CSS, JavaScript, and React, and 
                       develop reliable back-end systems with Django,
