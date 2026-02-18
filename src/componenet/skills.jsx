@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 export default function Skills(){
+
       const card =
         "bg-white/2 rounded-2xl shadow-lg p-8 border border-white/5  transition-all duration-300";
     
@@ -71,7 +72,7 @@ const [tools] = useState([
 
     return(
 <section id="skill" className={card}>
-  <div className="flex items-center justify-between flex-wrap gap-4">
+  <div className="flex items-center justify-center  flex-wrap gap-4">
     <h2 className="flex justify-center items-center text-blue-300 font-bold text-3xl">Skills</h2>
 
         <button

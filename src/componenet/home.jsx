@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <>
       {/* Welcome */}
-      <div className="text-center mt-16">
+      <div className="text-center mt-16 ">
         {/* ✅ Looping word-by-word title */}
         <motion.h2
           variants={container}
@@ -97,24 +97,54 @@ export default function Home() {
               >
                 {edit ? "Save" : "Edit"}
               </button>
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+             <div className="flex flex-col md:flex-row gap-10 items-start justify-center">
+
 
             
             {/* Profile Pic */}
-            <div className="flex flex-col items-center gap-4">
-              <img
-                src={profileImg}
-                alt="Profile"
-              className="w-64 h-68 object-cover border-2 border-black shadow-md rounded-xl"
-              />
-              <p className="text-pink-400 text-xl font-semibold">
-                REM PHEAROMTHUNMONY
-              </p>
-               <p className="text-pink-400 text-lg font-semibold">
-                Software Developer
-              </p>
+            <div className="w-full md:w-[320px] flex flex-col items-center gap-4">
 
-              {/* Social Links */}
+            <img
+              src={profileImg}
+              alt="Profile"
+              className="w-64 h-66 object-cover border-2 border-black shadow-md rounded-xl"
+            />
+
+            <p className="text-pink-400 text-xl font-semibold">
+              REM PHEAROMTHUNMONY
+            </p>
+            <p className="text-pink-400 text-lg font-semibold">
+              Software Developer
+            </p>
+
+            
+
+
+            </div>
+
+            {/* About */}
+           {/* Right: About */}
+        <div className="flex-1 w-full md:max-w-[700px] md:pl-10 md:pt-8">
+
+
+          <div className="flex items-center justify-between">
+            <h2 className="text-blue-300 font-bold text-3xl mb-6">About Me</h2>
+          </div>
+
+          <div className="text-sm text-white max-w-2xl">
+            {edit ? (
+              <textarea
+                defaultValue="My name is Mony, 20 years old..."
+                className="w-full min-h-[140px] rounded-lg px-3 py-2 text-sm border border-white/10 outline-none bg-black/40"
+              />
+            ) : (
+              <p className="text-white text-lg leading-relaxed">
+            I am a motivated junior web developer with a strong foundation in front-end and back-end development. I build responsive applications using HTML, CSS, JavaScript, and React, and develop reliable back-end systems with Django, Java, Spring Boot, and MySQL. I have hands-on experience with real-world projects such as e-commerce and POS systems, learn quickly, and write clean, maintainable code. I am seeking a junior developer or internship role where I can grow and contribute to a collaborative team.
+              </p>
+            )}
+          </div>
+
+            {/* Social Links */}
               <div className="mt-6 flex gap-4">
             <a
               href="https://www.linkedin.com/in/phearomthunmony-rem-288395349/"
@@ -143,45 +173,10 @@ export default function Home() {
               <FaGithub size={22} />
             </a>
           </div>
-
-
-            </div>
-
-            {/* About */}
-            <div>
-              <h2 className="text-blue-300 font-bold text-3xl mb-6 ">About Me</h2>
-
-              <div className="flex items-start gap-6 py-2">
-                
-
-                <div className="text-sm text-white flex-1 max-w-xl">
-
-                  {edit ? (
-                    <input
-                      defaultValue="My name is Mony, 20 years old. Currently major in Computer Science in TUX Global Institute."
-                      className="w-full rounded-lg px-3 py-2 text-sm border border-white/10 outline-none bg-black/40"
-                    />
-                  ) : (
-                    <span className="text-white text-lg gap-4">
-                      I am a motivated junior web developer with a strong foundation
-                      in front-end and back-end development. I build responsive 
-                      applications using HTML, CSS, JavaScript, and React, and 
-                      develop reliable back-end systems with Django,
-                      Java, Spring Boot, and MySQL. I have hands-on
-                      experience with real-world projects such as e-commerce and
-                      POS systems, learn quickly, and write clean, maintainable code.
-                      I am seeking a junior developer or internship role where I can
-                      grow and contribute to a collaborative team.
-                    </span>
-                  )}
-                </div>
+        </div>
+                  </div>
+                </section>
               </div>
-
-             
-            </div>
-          </div>
-        </section>
-      </div>
-    </>
+            </>
   );
 }
