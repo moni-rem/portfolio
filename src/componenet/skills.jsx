@@ -75,12 +75,14 @@ const [tools] = useState([
   <div className="flex items-center justify-center  flex-wrap gap-4">
     <h2 className="flex justify-center items-center text-blue-300 font-bold text-3xl">Skills</h2>
 
-        <button
-          onClick={() => setEdit(!edit)}
-          className="px-4 py-2 rounded-lg bg-pink-600/30 hover:bg-pink-600/50 transition"
+       
+       <button
+          onClick={() => setEdit((v) => !v)}
+          className="flex flex-end ml-96 px-4 py-2 rounded-lg bg-pink-600/30 hover:bg-pink-600/50 transition "
         >
           {edit ? "Save" : "Edit"}
         </button>
+        
 
     {edit && (
       <div className="flex gap-3 flex-wrap">

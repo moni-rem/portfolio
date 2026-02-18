@@ -102,29 +102,33 @@ export default function Home() {
 
             
             {/* Profile Pic */}
-            <div className="w-full md:w-[320px] flex flex-col items-center gap-4">
-
+           <div className="w-full md:w-[320px] flex flex-col items-center gap-4">
+           <div className="relative w-64 h-68 rounded-xl mb-4">
+    
+            <div
+              className="absolute inset-0 rounded-xl
+                        shadow-[0_0_30px_10px_rgba(236,72,153,0.7)]
+                        animate-pulse"
+            ></div>
             <img
               src={profileImg}
               alt="Profile"
-              className="w-64 h-66 object-cover border-2 border-black shadow-md rounded-xl"
+              className="relative w-full h-[20rem] object-cover rounded-xl"
             />
+          </div>
 
-            <p className="text-pink-400 text-xl font-semibold">
-              REM PHEAROMTHUNMONY
-            </p>
-            <p className="text-pink-400 text-lg font-semibold">
-              Software Developer
-            </p>
+  <p className="text-pink-400 text-xl font-semibold">
+    REM PHEAROMTHUNMONY
+  </p>
+  <p className="text-pink-400 text-lg font-semibold">
+    Software Developer
+  </p>
+</div>
 
-            
-
-
-            </div>
 
             {/* About */}
            {/* Right: About */}
-        <div className="flex-1 w-full md:max-w-[700px] md:pl-10 md:pt-8">
+        <div className="flex-1 w-full md:max-w-[700px] md:pl-12 md:pt-8">
 
 
           <div className="flex items-center justify-between">
