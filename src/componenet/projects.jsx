@@ -2,6 +2,7 @@ import { useState } from "react";
 import pos from "../assert/pos.png";
 import skincare from "../assert/skincare.jpg";
 import keychain from"../assert/key.jpg";
+import Footer from "./footer";
 export default function Projects() {
   const [edit, setEdit] = useState(false);
 
@@ -145,6 +146,9 @@ export default function Projects() {
           </button>
         )}
       </div>
+       <Footer/>
     </section>
+
+   
   );
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import bgVideo from "../assert/heart.mp4";
 
+
 export default function Layout() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -35,30 +36,37 @@ export default function Layout() {
           `}
         >
           <nav>
-            <ul className="flex flex-wrap justify-center gap-4 md:gap-10 text-white font-semibold text-base md:text-lg">
-              <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/">Home</Link></li>
-              <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/education">Education</Link></li>
-              <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/skills">Skills</Link></li>
-              <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/projects">Projects</Link></li>
-              <li>
-                <a href="https://github.com/moni-rem" className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" >
-                Github</a>
-              </li>
-               <a
-                href="/Moni_CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 font-semibold"
-              >
-                CV
-              </a>
+          <ul className="flex flex-wrap justify-center gap-4 md:gap-10 text-white font-semibold text-base md:text-lg">
+          <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/">Home</Link></li>
+          <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/education">Education</Link></li>
+          <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/skills">Skills</Link></li>
+          <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/projects">Projects</Link></li>
 
+          <li>
+          <a
+            href="https://github.com/moni-rem"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+          >
+            Github
+          </a>
+        </li>
 
-            </ul>
+          <li>
+            <a
+              href={`${process.env.PUBLIC_URL}/monycv.pdf`}
+              download="Mony-CV.pdf"
+              className="px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+            >
+              Download CV
+            </a>
+          </li>
+    </ul>
+            
           </nav>
         </header>
 
-        {/* Page content renders here */}
         <Outlet />
       </div>
     </div>

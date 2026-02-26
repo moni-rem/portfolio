@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { FaLinkedin, FaFacebook, FaGithub } from "react-icons/fa";
-import profileImg from "../assert/profile.png"; // adjust path if needed
+import profileImg from "../assert/mony.jpg";
 
 export default function Home() {
   const [edit, setEdit] = useState(false);
 
   const sentence = "Hello, Welcome to my homepage";
 
-  // ✅ Controls to force loop (reliable)
   const controls = useAnimation();
 
   useEffect(() => {
@@ -31,7 +30,6 @@ export default function Home() {
     };
   }, [controls]);
 
-  // ✅ Parent variant (stagger children)
   const container = {
     hidden: {
       transition: { when: "afterChildren" },
@@ -56,7 +54,6 @@ export default function Home() {
     <>
       {/* Welcome */}
       <div className="text-center mt-16 ">
-        {/* ✅ Looping word-by-word title */}
         <motion.h2
           variants={container}
           initial="hidden"
@@ -74,7 +71,6 @@ export default function Home() {
           ))}
         </motion.h2>
 
-        {/* ✅ Looping subtitle */}
         <motion.p
           animate={{ opacity: [0.4, 1, 0.4], y: [0, -4, 0] }}
           transition={{

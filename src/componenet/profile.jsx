@@ -23,7 +23,7 @@ const container = {
             repeat: Infinity,
             repeatType: "reverse",
             repeatDelay: 1,
-             ease: "easeInOut",
+            ease: "easeInOut",
     },
   },
 };
@@ -69,10 +69,8 @@ useEffect(() => {
     <source src={bgVideo} type="video/mp4" />
   </video>
 
-  {/* 🖤 Dark overlay */}
   <div className="absolute inset-0 bg-black/70"></div>
 
-  {/* 📦 Content */}
   <div className="relative z-10">
 
 
