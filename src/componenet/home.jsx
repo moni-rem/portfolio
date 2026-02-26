@@ -147,7 +147,7 @@ export default function Home() {
             {/* Social Links */}
               <div className="mt-6 flex gap-4">
             <a
-              href="https://www.linkedin.com/in/phearomthunmony-rem-288395349/"
+              href="https://www.linkedin.com/in/phearomthunmony-rem-506b60367/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition"

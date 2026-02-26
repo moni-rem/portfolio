@@ -60,7 +60,7 @@ export default function Footer() {
 
           <div className="flex gap-4">
             <a
-              href="https://github.com/"
+              href="https://github.com/moni-rem"
               target="_blank"
               rel="noreferrer"
               className="bg-white/5 p-3 rounded-full hover:bg-blue-500/20 transition"
@@ -69,7 +69,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/phearomthunmony-rem-506b60367/"
               target="_blank"
               rel="noreferrer"
               className="bg-white/5 p-3 rounded-full hover:bg-blue-500/20 transition"
