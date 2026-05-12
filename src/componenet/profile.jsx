@@ -1,12 +1,9 @@
 import { motion } from "framer-motion";
-import bgVideo from "../assert/heart.mp4"; 
 import React, { useState, useEffect } from "react";
+import WhiteDotBackground from "./WhiteDotBackground";
 
 
 export default function Profile() {
-  const [edit, setEdit] = useState(false);
-
-  
   // Word-by-word animation
 const sentence = "Hello, Welcome to my homepage";
 
@@ -58,37 +55,17 @@ useEffect(() => {
   return (
   <div className="relative min-h-screen text-white p-6 md:p-10 font-sans ">
 
-  {/*  Video Background */}
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="absolute inset-0 w-full h-full object-cover"
-  >
-    <source src={bgVideo} type="video/mp4" />
-  </video>
+  <WhiteDotBackground />
 
-  <div className="absolute inset-0 bg-black/70"></div>
+  <div className="fixed inset-0 z-0 bg-black/15 pointer-events-none"></div>
 
   <div className="relative z-10">
-
-
-      {/* Top button */}
-      <div className="flex justify-center md:justify-start">
-        <button
-          onClick={() => setEdit(!edit)}
-          className="bg-pink-200/20 text-white px-5 py-2 rounded-lg hover:bg-blue-100/10 transition text-lg"
-        >
-          {edit ? "Save" : "Edit profile"}
-        </button>
-      </div>
 
       {/* Header */}
               {/* hover:shadow-[0_0_30px_#3b82f6] */}
         <header
           className={`
-            sticky top-4 z-50 mt-6 h-20 md:h-24
+            sticky top-0 z-50 h-20 md:h-24
             flex items-center justify-center rounded-xl
             transition-all duration-300
             ${

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, Link } from "react-router-dom";
-import bgVideo from "../assert/heart.mp4";
+import { Outlet } from "react-router-dom";
+import WhiteDotBackground from "./WhiteDotBackground";
 
 
 export default function Layout() {
@@ -13,21 +13,18 @@ export default function Layout() {
   }, []);
 
   return (
-    <div className="relative min-h-screen text-white p-6 md:p-10 font-sans overflow-x-hidden">
-      {/* Video Background */}
-      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-        <source src={bgVideo} type="video/mp4" />
-      </video>
+    <div className="relative min-h-screen text-white p-6 md:p-10 font-sans overflow-x-hidden scroll-smooth">
+      <WhiteDotBackground />
 
       {/* overlay */}
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="fixed inset-0 z-0 bg-black/15 pointer-events-none" />
 
       {/* content */}
       <div className="relative z-10">
         {/* Navbar */}
         <header
           className={`
-            sticky top-4 z-50 mt-6 h-20 md:h-24
+            fixed top-0 left-1/2 z-50 mt-10 h-20 md:h-24 w-[92%] max-w-6xl -translate-x-1/2 px-6 md:px-10
             flex items-center justify-center rounded-xl
             transition-all duration-300
             ${scrolled
@@ -37,10 +34,16 @@ export default function Layout() {
         >
           <nav>
           <ul className="flex flex-wrap justify-center gap-4 md:gap-10 text-white font-semibold text-base md:text-lg">
+          {/* Route links kept here in case you want them back later.
           <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/">Home</Link></li>
           <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/education">Education</Link></li>
           <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/skills">Skills</Link></li>
           <li><Link className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" to="/projects">Projects</Link></li>
+          */}
+          <li><a className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" href="#profile">Home</a></li>
+          <li><a className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" href="#education">Education</a></li>
+          <li><a className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" href="#skill">Skills</a></li>
+          <li><a className="px-4 py-2 rounded-lg hover:bg-blue-600 transition" href="#project">Projects</a></li>
 
           <li>
           <a
@@ -55,11 +58,12 @@ export default function Layout() {
 
           <li>
             <a
-              href={`${process.env.PUBLIC_URL}/monycv.pdf`}
-              download="Mony-CV.pdf"
+              href="/PHEAROMTHUNMONY_REM_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 rounded-lg hover:bg-blue-600 transition"
             >
-              Download CV
+              View CV
             </a>
           </li>
     </ul>
@@ -67,7 +71,9 @@ export default function Layout() {
           </nav>
         </header>
 
-        <Outlet />
+        <main className="pt-32 md:pt-36">
+          <Outlet />
+        </main>
       </div>
     </div>
   );

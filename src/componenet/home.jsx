@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { FaLinkedin, FaFacebook, FaGithub } from "react-icons/fa";
 import profileImg from "../assert/mony.jpg";
 
 export default function Home() {
-  const [edit, setEdit] = useState(false);
-
   const sentence = "Hello, Welcome to my homepage";
 
   const controls = useAnimation();
@@ -80,19 +78,13 @@ export default function Home() {
           }}
           className="mt-4 text-base md:text-lg text-gray-300"
         >
-          Frontend Developer • React • Tailwind
+           Developer • React • Tailwind
         </motion.p>
       </div>
 
       <div className="mt-10 space-y-8">
         {/* ===== Profile ===== */}
-        <section id="profile" className={card}>
-           <button
-                onClick={() => setEdit(!edit)}
-                className="mt-4 px-4 py-2 rounded-lg bg-pink-100/20 hover:bg-blue-100/10 transition font-semibold"
-              >
-                {edit ? "Save" : "Edit"}
-              </button>
+        <section id="profile" className={`${card} scroll-mt-36`}>
              <div className="flex flex-col md:flex-row gap-10 items-start justify-center">
 
 
@@ -132,16 +124,9 @@ export default function Home() {
           </div>
 
           <div className="text-sm text-white max-w-2xl">
-            {edit ? (
-              <textarea
-                defaultValue="My name is Mony, 20 years old..."
-                className="w-full min-h-[140px] rounded-lg px-3 py-2 text-sm border border-white/10 outline-none bg-black/40"
-              />
-            ) : (
-              <p className="text-white text-lg leading-relaxed">
+            <p className="text-white text-lg leading-relaxed">
             I am a motivated junior web developer with a strong foundation in front-end and back-end development. I build responsive applications using HTML, CSS, JavaScript, and React, and develop reliable back-end systems with Django, Java, Spring Boot, and MySQL. I have hands-on experience with real-world projects such as e-commerce and POS systems, learn quickly, and write clean, maintainable code. I am seeking a junior developer or internship role where I can grow and contribute to a collaborative team.
-              </p>
-            )}
+            </p>
           </div>
 
             {/* Social Links */}
